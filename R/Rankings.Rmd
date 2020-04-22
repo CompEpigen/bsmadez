@@ -1,0 +1,162 @@
+
+
+---
+title: "Ranking of Benchmark Pipelines"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+## {.tabset}
+
+### TWGBS
+#### Distance Plot summary
+```{r, results = 'asis', echo = F, out.width = "100%", fig.cap = "TWGBS"}
+knitr::include_graphics("/Users/lilianleiter/Desktop/Bioinfo/TWGBS_DistPlot_sum_absolute.pdf")
+```
+#### Rankings
+##### Ranking by Sample
+##### {.tabset}
+###### 5T
+```{r, results='asis', echo =FALSE}
+TWGBS_5T <- read.csv("~/Desktop/Bioinfo/TWGBS_5T")
+knitr::kable(head(TWGBS_5T), format = "markdown")
+```
+###### 5N
+```{r, results='asis', echo =FALSE}
+TWGBS_5N <- read.csv("~/Desktop/Bioinfo/TWGBS_5N")
+knitr::kable(head(TWGBS_5N), format = "markdown")
+```
+###### 6T
+```{r, results='asis', echo =FALSE}
+TWGBS_6T <- read.csv("~/Desktop/Bioinfo/TWGBS_6T")
+knitr::kable(head(TWGBS_6T), format = "markdown")
+```
+###### 6N
+```{r, results='asis', echo =FALSE}
+TWGBS_6N <- read.csv("~/Desktop/Bioinfo/TWGBS_6N")
+knitr::kable(head(TWGBS_6N), format = "markdown")
+```
+###### Summary Ranking
+```{r, results='asis', out.width = "100%", fig.width = 4, fig.height= 12, echo =FALSE}
+TWGBS_Sample_sum <- read.csv("~/Desktop/Bioinfo/TWGBS_Sample_sum")
+knitr::kable(head(TWGBS_Sample_sum[1:12, ]), format = "markdown")
+```
+##### Ranking by Type
+##### {.tabset}
+###### N
+```{r, results='asis', echo =FALSE}
+TWGBS_N <- read.csv("~/Desktop/Bioinfo/TWGBS_N")
+# xtable::xtable(x= TWGBS_N, type = "html")
+library(xtable)
+print(xtable(TWGBS_N), type = "html")
+# knitr::kable(head(TWGBS_N), format = "markdown")
+```
+
+###### T
+```{r, results='asis', echo=FALSE}
+# bsmadez::rankings()
+# TWGBS_T <- TWGBS_5T <- rankings$ranking_by_sample[rankings$ranking_by_sample$method == "TWGBS" & rankings$ranking_by_sample$sample == "5T",]
+TWGBS_T <- read.csv("~/Desktop/Bioinfo/TWGBS_T")
+knitr::kable(head(TWGBS_T), format = "markdown")
+```
+###### Summary Ranking
+```{r, results='asis', echo =FALSE}
+TWGBS_Type_sum <- read.csv("~/Desktop/Bioinfo/TWGBS_Type_sum")
+knitr::kable(head(TWGBS_Type_sum), format = "markdown")
+```
+##### Ranking by Method
+##### {.tabset}
+###### Full Ranking
+```{r, results='asis', echo =FALSE}
+TWGBS_full <- read.csv("~/Desktop/Bioinfo/TWGBS_full")
+knitr::kable(head(TWGBS_full), format = "markdown")
+```
+###### Summary Ranking
+```{r, results='asis', echo =FALSE}
+TWGBS_sum <- read.csv("~/Desktop/Bioinfo/TWGBS_sum")
+knitr::kable(head(TWGBS_sum), format = "markdown")
+```
+##### Final Summary Ranking
+```{r, results='asis', echo =FALSE}
+TWGBS_final_sum <- read.csv("~/Desktop/Bioinfo/TWGBS_final_sum")
+library(xtable)
+print(xtable(TWGBS_final_sum), type = "html", align = "l", digits = 6, display = "s", auto= T, size = Huge)
+# knitr::kable(head(TWGBS_final_sum), format = "markdown")
+```
+### WGBS
+#### Distance Plot summary
+```{r, results = 'asis', echo = F, out.width = "100%", fig.cap = "WGBS"}
+knitr::include_graphics("/Users/lilianleiter/Desktop/Bioinfo/WGBS_DistPlot_sum_absolute.pdf")
+```
+#### Rankings
+##### Ranking by Sample
+#####{.tabset}
+###### 5T
+```{r, results='asis', echo =FALSE}
+WGBS_5T <- read.csv("~/Desktop/Bioinfo/WGBS_5T")
+knitr::kable(head(WGBS_5T), format = "markdown")
+```
+###### 5N
+```{r, results='asis', echo =FALSE}
+WGBS_5N <- read.csv("~/Desktop/Bioinfo/WGBS_5N")
+knitr::kable(head(WGBS_5N), format = "markdown")
+```
+###### 6T
+```{r, results='asis', echo =FALSE}
+WGBS_6T <- read.csv("~/Desktop/Bioinfo/WGBS_6T")
+knitr::kable(head(WGBS_6T), format = "markdown")
+```
+###### 6N
+```{r, results='asis', echo =FALSE}
+WGBS_6N <- read.csv("~/Desktop/Bioinfo/WGBS_6N")
+knitr::kable(head(WGBS_6N), format = "markdown")
+```
+###### Summary Ranking
+```{r, results='asis', echo =FALSE}
+WGBS_Sample_sum <- read.csv("~/Desktop/Bioinfo/WGBS_Sample_sum")
+knitr::kable(head(WGBS_Sample_sum), format = "markdown")
+```
+##### Ranking by Type
+##### {.tabset}
+###### N
+```{r, results='asis', echo =FALSE}
+WGBS_N <- read.csv("~/Desktop/Bioinfo/WGBS_N")
+knitr::kable(head(WGBS_N), format = "markdown")
+```
+
+###### T
+```{r, results='asis', echo=FALSE}
+# bsmadez::rankings()
+# WGBS_T <- WGBS_5T <- rankings$ranking_by_sample[rankings$ranking_by_sample$method == "WGBS" & rankings$ranking_by_sample$sample == "5T",]
+WGBS_T <- read.csv("~/Desktop/Bioinfo/WGBS_T")
+knitr::kable(head(WGBS_T), format = "markdown")
+```
+###### Summary Ranking
+```{r, results='asis', echo =FALSE}
+WGBS_Type_sum <- read.csv("~/Desktop/Bioinfo/WGBS_Type_sum")
+knitr::kable(head(WGBS_Type_sum), format = "markdown")
+```
+##### Ranking by Method
+##### {.tabset}
+###### Full Ranking
+```{r, results='asis', echo =FALSE}
+WGBS_full <- read.csv("~/Desktop/Bioinfo/WGBS_full")
+knitr::kable(head(WGBS_full), format = "markdown")
+```
+###### Summary Ranking
+```{r, results='asis', echo =FALSE}
+WGBS_sum <- read.csv("~/Desktop/Bioinfo/WGBS_sum")
+knitr::kable(head(WGBS_sum), format = "markdown")
+```
+##### Final Summary Ranking
+```{r, results='asis', echo =FALSE}
+WGBS_final_sum <- read.csv("~/Desktop/Bioinfo/WGBS_final_sum")
+knitr::kable(head(WGBS_final_sum), format = "markdown")
+```
